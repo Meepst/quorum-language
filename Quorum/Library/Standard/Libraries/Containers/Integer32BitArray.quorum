@@ -79,4 +79,40 @@ class Integer32BitArray
     */
     system action SetSize(integer size)
 
+	/*
+		This action sets the value of every element in the array to n.
+		If the array is size 0, nothing happens.
+
+		Attribute: Parameter value The item to set all available locations in the
+		array to.
+
+        Attribute: Example
+        use Libraries.Containers.Number32BitArray
+        Number32BitArray myArray
+        myArray:SetSize(10)
+        myArray:Fill(0)
+	*/
+    system action Fill(integer n)
+
+    /*
+		This action sets the value of every element in the array in a range from the
+		beginning (inclusive) until the end (exclusive) with n. The range start must
+		be less than its end, and within the array size from 0 to the array length.
+
+		Attribute: Parameter from The beginning of the range, inclusive.
+
+		Attribute: Parameter to The end of the range, exclusive.
+		
+		Attribute: Parameter value The item to set the range of locations in the
+		array to.
+
+        Attribute: Example
+        use Libraries.Containers.Number32BitArray
+        Number32BitArray myArray
+        myArray:SetSize(5)
+        myArray:Fill(0) // [0, 0, 0, 0, 0]
+        myArray:Fill(2, 4, 1) [0, 0, 1, 1, 0]
+	*/
+    system action Fill(integer a, integer b, integer n)
+
 end
