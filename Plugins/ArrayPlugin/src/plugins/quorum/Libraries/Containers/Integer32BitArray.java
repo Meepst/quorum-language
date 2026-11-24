@@ -37,4 +37,20 @@ public class Integer32BitArray {
     public void SetSize(int size) {
         ints = new int[size];
     }
+
+    public void Fill(int value) {
+	   	if(ints == null) {
+	        throw new InvalidLocationError();
+	    }
+		value = (int) value;
+		Arrays.fill(ints, value);	
+    }
+
+    public void Fill(int from, int to, int value) {
+    	if (ints == null || from < 0 || to > ints.length || from >= to) {
+     		throw new InvalidLocationError();
+     	}
+      	value = (int) value;
+    	Arrays.fill(ints, from, to, value);
+    }
 }

@@ -37,4 +37,20 @@ public class Number32BitArray {
     public void SetSize(int size) {
         floats = new float[size];
     }
+    
+    public void Fill(double value) {
+	   	if(floats == null) {
+	        throw new InvalidLocationError();
+	    }
+		value = (float) value;
+		Arrays.fill(floats, value);	
+    }
+
+    public void Fill(int from, int to, double value) {
+    	if (floats == null || from < 0 || to > floats.length || from >= to) {
+     		throw new InvalidLocationError();
+     	}
+      	value = (float) value;
+    	Arrays.fill(floats, from, to, value);
+    }
 }

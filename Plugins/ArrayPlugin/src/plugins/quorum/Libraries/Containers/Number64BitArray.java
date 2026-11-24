@@ -5,6 +5,7 @@
  */
 package plugins.quorum.Libraries.Containers;
 
+import java.util.Arrays;
 import quorum.Libraries.Language.Errors.InvalidLocationError;
 
 /**
@@ -36,5 +37,19 @@ public class Number64BitArray {
     
     public void SetSize(int size) {
         doubles = new double[size];
+    }
+
+    public void Fill(double value) {
+	   	if(doubles == null) {
+	        throw new InvalidLocationError();
+	    }
+		Arrays.fill(doubles, value);	
+    }
+
+    public void Fill(int from, int to, double value) {
+    	if (doubles == null || from < 0 || to > doubles.length || from >= to) {
+     		throw new InvalidLocationError();
+     	}
+    	Arrays.fill(doubles, from, to, value);
     }
 }
