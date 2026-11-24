@@ -5,6 +5,7 @@
  */
 package plugins.quorum.Libraries.Containers;
 
+import java.util.Arrays;
 import quorum.Libraries.Language.Errors.InvalidLocationError;
 
 /**
