@@ -43,15 +43,13 @@ public class Number32BitArray {
 	   	if(floats == null) {
 	        throw new InvalidLocationError();
 	    }
-		value = (float) value;
-		Arrays.fill(floats, value);	
+		Arrays.fill(floats, (float) value);	
     }
 
     public void Fill(int from, int to, double value) {
     	if (floats == null || from < 0 || to > floats.length || from >= to) {
      		throw new InvalidLocationError();
      	}
-      	value = (float) value;
-    	Arrays.fill(floats, from, to, value);
+    	Arrays.fill(floats, from, to, (float) value);
     }
 }
